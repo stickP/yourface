@@ -1,0 +1,341 @@
+body {
+  font-family: 'Do Hyeon', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.file-upload {
+  /* margin: 0 auto;
+  padding: 20px;
+  width: 914px;
+  height: 50vw; */
+  border-radius: 10px;	
+  border: solid 1.5px #f6f7fa;
+  background-color: #ffffff;
+  padding: 12% 0;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+#loading {
+  display: none;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  /* margin-top: 20px; */
+  border: 2px dashed #35465d;
+  position: relative;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 65%;
+}
+
+.image-upload-wrap:hover {
+  /* margin-top: 20px; */
+  border: 2px dashed #35465d;
+  position: relative;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #35465d;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #ffffff;
+  border: 4px dashed #35465d;
+}
+
+.image-title-wrap {
+  font-family: 'Yeon Sung', cursive;
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+/* .drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+} */
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.nav-distance {
+	padding: 2.1% 7.7%;
+}
+
+.navbar-light .navbar-brand {
+	font-family: 'Do Hyeon', sans-serif;
+	line-height: 1.68;
+	text-align: left;
+	color: #000000;
+	font-size: 2rem;
+}
+
+.navbar-light .navbar-toggler .nav-link {
+	font-family: 'Do Hyeon', sans-serif;
+	border-color: #ffffff;
+}
+
+.section {
+	margin-top: 100px;
+}
+
+.title {
+	font-family: 'Yeon Sung', cursive;
+	line-height: 1.67;
+	text-align: center;
+	color: #35465d;
+}
+
+.subtitle {
+	font-family: 'Yeon Sung', cursive;
+	line-height: 1.53;
+	text-align: center;
+	color: #35465d;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+	.navbar-brand {
+		font-size: 2rem;
+	}
+}
+
+/* .youtube-link {
+	font-family: 'Yeon Sung', cursive;
+	font-size: 1.5rem;
+	line-height: 1.71;
+	text-align: center;
+	color: #f73737;
+	text-decoration: underline;
+}
+
+.youtube-link:hover {
+	font-family: NanumSquareR;
+	font-size: 1.5rem;
+	line-height: 1.71;
+	text-align: center;
+	color: #f73737;
+	text-decoration: underline;
+} */
+
+.youtube-icon {
+	width: 8%;
+}
+
+.upload {
+	width: 20%;
+}
+
+.upload-text {
+	font-family: 'Yeon Sung', cursive;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 1.5rem;
+	line-height: 1.53;
+	text-align: center;
+	color: #35465d;
+}
+
+.result-message {
+	font-family: 'Do Hyeon', sans-serif;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 1rem;
+	line-height: 1.53;
+	text-align: center;
+	color: #35465d;
+}
+
+.animal-label {
+    width: 20%;
+    text-align: left;
+    height: 2rem;
+}
+
+.bar-container {
+  height: 2.7rem;
+}
+
+.브이-box {
+  position: absolute; /* ? */
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(179, 162, 255, 0.2);
+}
+.브이-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(179, 162, 255, 1);
+}
+
+.하트-box {
+  position: absolute; /* 핑크 */
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(235, 166, 190, 0.2);
+}
+.하트-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(235, 166, 190, 1);
+}
+
+.계란-box {
+  position: absolute; /* 노랑 */
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(251, 176, 59, 0.2);
+}
+.계란-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(251, 176, 59, 1);
+}
+
+
+.둥근-box { 
+  position: absolute; /* 초록 */
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(117, 204, 84, 0.2);
+}
+.둥근-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(117, 204, 84, 1);
+}
+
+.네모-box {
+  position: absolute; /* 브라운 */
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(195, 140, 102, 0.2);
+}
+.네모-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(195, 140, 102, 1);
+}
+
+.다이아-box { /* 형광 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(208, 255, 250, 0.2);
+}
+.다이아-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(208, 255, 250, 1);
+}
+
+.길쭉-box { /* 파란 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(27, 175, 234, 0.2);
+}
+.길쭉-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(27, 175, 234, 1);
+}
+
