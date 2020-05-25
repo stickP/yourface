@@ -75,18 +75,15 @@
 				<div class="spinner-border" role="status">
 					<span class="sr-only">Loading...</span>
 				</div>
-				<p class="text-center">AI가 당신의 얼굴을 분석중입니다.</p>
+				<p class="text-center">AI가 당신의 얼굴상을 분석중입니다.</p>
 			</div>
 			<!-- 			 -->
 			<p class="result-message"></p>
 			<div id="label-container"></div>
 			<div class="image-title-wrap">
-				<button type="button" onclick="removeUpload()" class="remove-image">삭제
-					<span class="image-title">Uploaded Image</span>
+				<button type="button" onclick="removeUpload()" class="remove-image">이미지 삭제
+					<!-- <span class="image-title">Uploaded Image</span> -->
 				</button>
-				<!-- <button type="button p-2" class="try-again-btn" onclick="gaReload1();" data-toggle="modal" data-target="#adModal">
-                    <span class="try-again-text">다른 사진으로 재시도</span>
-                </button> -->
 			</div>
 		</div>
 	</div>
@@ -132,6 +129,7 @@
 				var reader = new FileReader();
 				reader.onload = function(e) {
 					$('.image-upload-wrap').hide();
+					$('#loading').show();
 					$('.file-upload-image').attr('src', e.target.result);
 					$('.file-upload-content').show();
 					$('.image-title').html(input.files[0].name);
@@ -139,6 +137,7 @@
 				reader.readAsDataURL(input.files[0]);
 				init().then(() => {
 					predict();
+					$('#loading').hide();
 				});
 			} else {
 				removeUpload();
@@ -186,56 +185,48 @@
 			const prediction = await model.predict(image, false);
 			prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
 			console.log(prediction[0].className);
-			var resultMessage, resultExplain, resultCeleb;
+			var resultTitle, resultExplain, resultCeleb;
 				
 			switch (prediction[0].className) {
 				case "브이":
-					resultMessage = "브이상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
-                        
+					resultTitle = "당신은 승리의 브이상 V"
+                        resultExplain = "날렵한 브이라인을 소유한 당신, 부럽다!"
+                        resultCeleb = "브이상 연예인: 현빈, 황정음"
 					break;
 				case "하트":
-					resultMessage = "하트상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+					resultTitle = "당신은 사랑스러운 하트상 ♡"
+                        resultExplain = "넓은 마음의 소유자, 하지만 의외로 성적인 매력이 많다! 매우 상상력이 풍부하며 직관적인 능력도 우수한데요. 친절하고 친근한 이상주의자를 연상시킨다. 하트형 얼굴을 한 사람들은 강인한 성격이면서 남에게 의지가 되어주는 면이 있다. 또한 창의적이고, 결단력이 있으며, 인내심이 강하고, 새로운 모험에 나섰을 때 두려움을 극복하려는 의지가 있다."
+                        resultCeleb = "하트상 연예인: 강다니엘, 이솜"
                         
 					break;
 				case "계란":
-					resultMessage = "계란상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+					resultTitle = "당신은 호감형 계란상 O"
+                        resultExplain = "주위에 신경을 많이 쓰며 노력파인 계란형 얼굴. 균형이 잡힌 얼굴이라 가장 이상적인 골격인것으로 알려져있으며 어떤 헤어스타일, 액세서리라도 잘 어울린다고합니다. 성격 진단에 따르면, 이런 얼굴형을 가진 사람은 매사에 정확하며 올바르게 행동하는 성향이 있다.  결과에 무게를 두며 중요한 결정을 내릴 때 사회적으로 올바르다고 여겨지는 것들을 중시한다."
+                        resultCeleb = "계란상 연예인: 정해인, 전지현"
                         
 					break;
 				case "둥근":
-					resultMessage = "둥근상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+					resultTitle = "당신은 귀여운 둥근상 ○"
+                        resultExplain = "둥근 얼굴은 살집이 풍만하고 혈색이 좋다. 명랑하고 활동적이며 추진력이 강한 성격으로 재물과 인연이 있다. 잘 돌아다니는 성격으로 고향을 떠나 타향에서 살게 되는 경우가 많다. 일복이 터져 바쁘게 살고 성공과 돈을 거머쥘 가능성이 높다. 회사의 중역·임원이 되거나 사업가로 성공하는 이가 많다. (관상학) 어리고 순수한 인상을 주지만, 둥근 얼굴형을 한 사람은 안정감 있고, 성숙하며 올바른 결정을 내리는 데 책임감을 느낀다. 일부 생각과 달리 둥근 얼굴형의 사람은 쉽게 인간관계를 형성하며, 남을 잘 돕고 친절한 성향이 있다."
+                        resultCeleb = "둥근상 연예인: 송중기, 미란다 커"
                         
 					break;
 				case "네모":
-					resultMessage = "네모상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+					resultTitle = "당신은 카리스마 네모상 □"
+                        resultExplain = "타고난 리더의 자질! 사각형 얼굴은 체력부터 좋으며 에너지또한 넘칩니다. 그때문인지 이러한 윤곽의 소유자는 큰 프로젝트에 참여하는것을 좋아한답니다. 또한 분석 능력도 확실하며, 스트레스가 심한 상황에서도 조용하고 통솔력있는 타고난 리더의 자질을 보여준답니다. 활동적이고 신뢰감을 주는 대장부형으로 무리의 리더가 된다. 중년에 성공해 자기 기반을 확실히 다지며 부동산과 인연이 깊다. (관상학)"
+                        resultCeleb = "네모상 연예인: 이병헌, 안젤리나 졸리"
                         
 					break;
 				case "다이아":
-					resultMessage = "다이아상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+					resultTitle = "당신은 빛나는 다이아상 ◇"
+                        resultExplain = "고집이 강하지만 실행력이 강한 마름모형 얼굴. 이러한 얼굴형을 가지고 있는 사람들은 침착하고, 활발한 사람들에게서 많이 볼 수 있습니다. 하지만 집착, 신경질적인 면도 있다고합니다. 또한 퀄리티를 추구하는 사람, 자신의 말에 책임을 지고 실행하는 타입이 많다고합니다. 한편으로는 이러한 마름모형 얼굴을 가진사람들은 자신의 말이 때때로 다른사람을 다치게 할 수도 다른사람과 의견이 엇갈려 당신이 상처를 받을 수 도 있으니 주의가 필요합니다."
+                        resultCeleb = "다이아상 연예인: 김우빈, 제니퍼 로페즈"
                         
 					break;
 				case "길쭉":
-					resultMessage = "길쭉상"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+					resultTitle = "당신은 길쭉길쭉 길쭉상 ０"
+                        resultExplain = "얼굴형을 가진 사람들은 아주 진지하고 신경질적으로 보일 수도 있다. 길고 좁은 얼굴형의 사람들은 아주 친절하고 긍정적인 에너지로 가득 차 있으며 인간관계를 어떻게 맺어야 할지 잘 알고 있다. 또한 책임감이 뛰어나고 사람들을 이끄는 성향이 있다."
+                        resultCeleb = "길쭉상 연예인: 존박, 메간 폭스"
                         
 					break;
 				default:
@@ -294,47 +285,14 @@
 			// $('.result-message').html(resultMessage);
 			// for (let i = 0; i < maxPredictions; i++) {
 			// 	const classPrediction =
-			// 		prediction[i].className + ": " + prediction[i].probability.toFixed(2); //여기에 html 태그를 넣고 css로 뭘 하면 된다는듯
-			// 	labelContainer.childNodes[i].innerHTML = classPrediction; //조코딩 영상에 제플린 주소 있다는듯
+			// 		prediction[i].className + ": " + prediction[i].probability.toFixed(2); 
+			// 	labelContainer.childNodes[i].innerHTML = classPrediction; 
 				
 				
 			}
 		}
 	</script>
-	<!-- <canvas id="myChart" width="400" height="400"></canvas>
-	<script>
-		// Any of the following formats may be used
-		var ctx = document.getElementById('myChart');
-		
-		var myRadarChart = new Chart(ctx, {
-		type: 'radar',
-		data: {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-			datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-			backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-			}]
-		},
-		//options: options
-	});
-	</script> -->
+	
 </body>
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
