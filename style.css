@@ -12,7 +12,7 @@ body {
   border-radius: 10px;	
   border: solid 1.5px #f6f7fa;
   background-color: #ffffff;
-  padding: 12% 0;
+  padding: 7% 0;
 }
 
 .file-upload-content {
@@ -134,7 +134,7 @@ body {
 
 .title {
 	font-family: 'Yeon Sung', cursive;
-	line-height: 1.67;
+	line-height: 1;
 	text-align: center;
 	color: #35465d;
 }
@@ -184,25 +184,25 @@ body {
 
 .upload-text {
 	font-family: 'Yeon Sung', cursive;
-	width: 50%;
+	width: 100%;
 	margin: 0 auto;
 	font-size: 1.5rem;
-	line-height: 1.53;
+	line-height: 1.5;
 	text-align: center;
 	color: #35465d;
 }
 
 .result-message {
 	font-family: 'Do Hyeon', sans-serif;
-	width: 50%;
+	width: 70%;
 	margin: 0 auto;
-	font-size: 1rem;
-	line-height: 1.53;
+	font-size: 1.49rem;
+	line-height: 1.8;
 	text-align: center;
 	color: #35465d;
 }
 
-.animal-label {
+.face-label {
     width: 20%;
     text-align: left;
     height: 2rem;
@@ -230,6 +230,15 @@ body {
   background-color: rgba(179, 162, 255, 1);
 }
 
+.브이-face-title {
+    color: #b3a2ff;
+	font-size: 1.8rem;
+}
+.브이-face-celeb {
+    color: #b3a2ff;
+    font-size: 1.4rem;
+}
+
 .하트-box {
   position: absolute; /* 핑크 */
   top: 0;
@@ -246,6 +255,15 @@ body {
   height: 2rem;
   border-radius: 10px;
   background-color: rgba(235, 166, 190, 1);
+}
+
+.하트-face-title {
+    color: #eba6be;
+	font-size: 1.8rem;
+}
+.하트-face-celeb {
+    color: #eba6be;
+    font-size: 1.4rem;
 }
 
 .계란-box {
@@ -266,6 +284,14 @@ body {
   background-color: rgba(251, 176, 59, 1);
 }
 
+.계란-face-title {
+    color: #fbb03b;
+	font-size: 1.8rem;
+}
+.계란-face-celeb {
+    color: #fbb03b;
+    font-size: 1.4rem;
+}
 
 .둥근-box { 
   position: absolute; /* 초록 */
@@ -283,6 +309,15 @@ body {
   height: 2rem;
   border-radius: 10px;
   background-color: rgba(117, 204, 84, 1);
+}
+
+.둥근-face-title {
+    color: #75cc54;
+	font-size: 1.8rem;
+}
+.둥근-face-celeb {
+    color: #75cc54;
+    font-size: 1.4rem;
 }
 
 .네모-box {
@@ -303,6 +338,15 @@ body {
   background-color: rgba(195, 140, 102, 1);
 }
 
+.네모-face-title {
+    color: #c38c66;
+	font-size: 1.8rem;
+}
+.네모-face-celeb {
+    color: #c38c66;
+    font-size: 1.4rem;
+}
+
 .다이아-box { /* 형광 */
   position: absolute;
   top: 0;
@@ -319,6 +363,15 @@ body {
   height: 2rem;
   border-radius: 10px;
   background-color: rgba(208, 255, 250, 1);
+}
+
+.다이아-face-title {
+    color: #d0fffa;
+	font-size: 1.8rem;
+}
+.다이아-face-celeb {
+    color: #d0fffa;
+    font-size: 1.4rem;
 }
 
 .길쭉-box { /* 파란 */
@@ -339,3 +392,11 @@ body {
   background-color: rgba(27, 175, 234, 1);
 }
 
+.길쭉-face-title {
+    color: #1bafea;
+	font-size: 1.8rem;
+}
+.길쭉-face-celeb {
+    color: #1bafea;
+    font-size: 1.4rem;
+}

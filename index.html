@@ -79,6 +79,7 @@
 			</div>
 			<!-- 			 -->
 			<p class="result-message"></p>
+			<div class="addthis_inline_share_toolbox"></div>
 			<div id="label-container"></div>
 			<div class="image-title-wrap">
 				<button type="button" onclick="removeUpload()" class="remove-image">이미지 삭제
@@ -87,10 +88,10 @@
 			</div>
 		</div>
 	</div>
-	<div id="webcam-container"></div>
+	<!-- <div id="webcam-container"></div> -->
 
 	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<div class="addthis_inline_share_toolbox"></div>
+	<!-- <div class="addthis_inline_share_toolbox"></div> -->
 
 	<div id="disqus_thread"></div>
 	<script>
@@ -226,14 +227,14 @@
 				default:
 					resultMessage = "알수없음"
 					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!"
-                        resultCeleb = "강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기"
+                        resultExplain = "!"
+                        resultCeleb = ""
                         
 			}
 			
-			var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
-            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
-            var celeb = "<div class='" + prediction[0].className + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+			var title = "<div class='" + prediction[0].className + "-face-title'>" + resultTitle + "</div>"
+            var explain = "<div class='face-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + prediction[0].className + "-face-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
             $('.result-message').html(title + explain + celeb);
 			var barWidth;
             for (let i = 0; i < maxPredictions; i++) {
@@ -272,7 +273,7 @@
                         labelTitle = "알수없음"
                 }
 				
-				var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+				var label = "<div class='face-label d-flex align-items-center'>" + labelTitle + "</div>"
                 var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
                 labelContainer.childNodes[i].innerHTML = label + bar;
 			
