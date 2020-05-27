@@ -354,7 +354,7 @@ body {
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(208, 255, 250, 0.2);
+  background-color: rgba(153, 255, 255, 0.2);
 }
 .다이아-bar {
   position: absolute;
@@ -362,15 +362,15 @@ body {
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(208, 255, 250, 1);
+  background-color: rgba(153, 255, 255, 1);
 }
 
 .다이아-face-title {
-    color: #d0fffa;
+    color: #99ffff;
 	font-size: 1.8rem;
 }
 .다이아-face-celeb {
-    color: #d0fffa;
+    color: #99ffff;
     font-size: 1.4rem;
 }
 
