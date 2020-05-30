@@ -21,7 +21,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light nav-distance">
-		<a class="navbar-brand" href="#">네가 왕이 될 상인가?</a>
+		<a class="navbar-brand" href="#">얼굴형 테스트</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -50,7 +50,7 @@
 
 	<section class="section">
 		<h1 class="title">네가 왕이 될 상인가 ?</h1>
-		<h2 class="subtitle">인공지능을 통해 알아보는 당신의 얼굴상 !</h2>
+		<h2 class="subtitle">인공지능을 통해 알아보는 당신의 얼굴형 !</h2>
 	</section>
 	<!-- <section class="youtube">
 		<div class="container mt-5 youtube-cover d-flex flex-row-reverse">
@@ -79,21 +79,31 @@
 			</div>
 			<!-- 			 -->
 			<p class="result-message"></p>
-			<div class="addthis_inline_share_toolbox"></div>
+			<div class="addthis_inline_share_toolbox pt-3"></div>
 			<div id="label-container"></div>
-			<div class="image-title-wrap">
+			<div class="image-title-wrap pt-3">
 				<button type="button" onclick="removeUpload()" class="remove-image">이미지 삭제
 					<!-- <span class="image-title">Uploaded Image</span> -->
 				</button>
 			</div>
 		</div>
 	</div>
+
+	<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-tofm0l9s7qzm" data-ad-width="320" data-ad-height="100"></ins>
+	<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 	<!-- <div id="webcam-container"></div> -->
 
 	<!-- Go to www.addthis.com/dashboard to customize your tools -->
 	<!-- <div class="addthis_inline_share_toolbox"></div> -->
 
 	<div id="disqus_thread"></div>
+
+	<footer class="footer pt-5 container d-flex justify-content-center">
+		<div>
+			<p>&copy; stickP 2020. All Rights Reserved.</p>
+			<!-- 보류 -->
+		</div>
+	</footer>
 	<script>
 		/**
 		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -187,107 +197,100 @@
 			prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
 			console.log(prediction[0].className);
 			var resultTitle, resultExplain, resultCeleb;
-				
 			switch (prediction[0].className) {
 				case "브이":
-					resultTitle = "당신은 승리의 브이상 V"
-                        resultExplain = "누구나 원하는 날렵한 브이라인을 소유한 당신, 부럽다!"
-                        resultCeleb = "브이상 연예인: 현빈, 황정음"
+					resultTitle = "당신은 승리의 브이상!"
+					resultExplain = "누구나 원하는 날렵한 V라인을 소유한 당신, 부럽다!"
+					resultCeleb = "브이상 연예인: 현빈, 황정음"
 					break;
 				case "하트":
-					resultTitle = "당신은 사랑스러운 하트상 ♡"
-                        resultExplain = "풍부한 상상력과 넓은 마음의 소유자! 관상학적으로 당신은 친절하면서도 남에게 의지가 되어주는 강인한 면이 있고, 성적 매력이 넘친다고! ๑❤ᴗ❤๑"
-                        resultCeleb = "하트상 연예인: 강다니엘, 이솜"
+					resultTitle = "당신은 사랑스러운 하트상!"
+					resultExplain = "풍부한 상상력과 넓은 마음의 소유자! 관상학적으로 당신은 친절하면서도 남에게 의지가 되어주는 강인한 면이 있고, 성적 매력이 넘친다고! ๑❤ᴗ❤๑"
+					resultCeleb = "하트상 연예인: 강다니엘, 이솜"
 					break;
 				case "계란":
-					resultTitle = "당신은 호감형 계란상 O"
-                        resultExplain = "관상학적으로 당신은 주위에 신경을 많이 쓰는 편으로, 모든 일에 정확하고 올바르게 행동한다고 한다. 한마디로 착한 사람이라는 뜻! 👍"
-                        resultCeleb = "계란상 연예인: 정해인, 전지현"
+					resultTitle = "당신은 호감형 계란상!"
+					resultExplain = "관상학적으로 당신은 주위에 신경을 많이 쓰는 편으로, 모든 일에 정확하고 올바르게 행동한다고 한다. 한마디로 착한 사람이라는 뜻! 👍"
+					resultCeleb = "계란상 연예인: 정해인, 전지현"
 					break;
 				case "둥근":
-					resultTitle = "당신은 귀여운 둥근상 ○"
-                        resultExplain = "명랑하고 활동적인 당신! 어리고 순수한 인상이지만 관상학적으로는 안정감있고 성숙한 면모를 지닌 당신은 반전매력의 소유자! ◕‿◕✿"
-                        resultCeleb = "둥근상 연예인: 송중기, 미란다 커"
+					resultTitle = "당신은 귀여운 둥근상!"
+					resultExplain = "명랑하고 활동적인 당신! 어리고 순수한 인상이지만 관상학적으로는 안정감있고 성숙한 면모를 지닌 당신은 반전매력의 소유자! ◕‿◕✿"
+					resultCeleb = "둥근상 연예인: 송중기, 미란다 커"
 					break;
 				case "네모":
-					resultTitle = "당신은 카리스마 네모상 □"
-                        resultExplain = "에너지가 넘치는 당신! 분석 능력이 뛰어나며, 주위에 신뢰를 주는 관상을 가진 당신은 타고난 리더형이라고! ▰‿▰"
-                        resultCeleb = "네모상 연예인: 이병헌, 안젤리나 졸리"
+					resultTitle = "당신은 카리스마 네모상!"
+					resultExplain = "에너지가 넘치는 당신! 분석 능력이 뛰어나며, 주위에 신뢰를 주는 관상을 가진 당신은 타고난 리더형이라고! ▰‿▰"
+					resultCeleb = "네모상 연예인: 이병헌, 안젤리나 졸리"
 					break;
 				case "다이아":
-					resultTitle = "당신은 빛나는 다이아상 ◇"
-                        resultExplain = "관상학적으로 당신은 침착하고 실행력이 강하며, 고집이 세지만 퀄리티를 추구하는 사람! ✦_✦"
-                        resultCeleb = "다이아상 연예인: 김우빈, 제니퍼 로페즈"
+					resultTitle = "당신은 빛나는 다이아상!"
+					resultExplain = "관상학적으로 당신은 침착하고 실행력이 강하며, 고집이 세지만 퀄리티를 추구하는 사람! ✦_✦"
+					resultCeleb = "다이아상 연예인: 김우빈, 제니퍼 로페즈"
 					break;
 				case "길쭉":
-					resultTitle = "당신은 성숙한 길쭉상 ０"
-                        resultExplain = "진지한 인상이지만 긍정적인 에너지로 가득 찬 당신은 관상학적으로 자신의 말에 책임을 지는 진국이라고! 🤩"
-                        resultCeleb = "길쭉상 연예인: 존박, 메간 폭스"
+					resultTitle = "당신은 성숙한 길쭉상!"
+					resultExplain = "진지한 인상이지만 긍정적인 에너지로 가득 찬 당신은 관상학적으로 자신의 말에 책임을 지는 진국이라고! 🤩"
+					resultCeleb = "길쭉상 연예인: 존박, 메간 폭스"
 					break;
 				default:
 					resultMessage = "알수없음"
-					resultTitle = "귀여운 순둥이 강아지상"
-                        resultExplain = "!"
-                        resultCeleb = ""
-                        
+					resultTitle = "!"
+					resultExplain = "!"
+					resultCeleb = ""
 			}
-			
 			var title = "<div class='" + prediction[0].className + "-face-title'>" + resultTitle + "</div>"
-            var explain = "<div class='face-explain pt-2'>" + resultExplain + "</div>"
-            var celeb = "<div class='" + prediction[0].className + "-face-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
-            $('.result-message').html(title + explain + celeb);
+			var explain = "<div class='face-explain pt-2'>" + resultExplain + "</div>"
+			var celeb = "<div class='" + prediction[0].className + "-face-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+			var recommendation = "<div class='recom'>얼굴형에 맞는 헤어스타일과 코디를 검색해보세요^^</div>"
+			$('.result-message').html(title + explain + celeb + recommendation);
 			var barWidth;
-            for (let i = 0; i < maxPredictions; i++) {
-                if (prediction[i].probability.toFixed(2) > 0.1) {
-                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
-                    barWidth = "4%"
-                } else {
-                    barWidth = "2%"
-                }
-				
+			for (let i = 0; i < maxPredictions; i++) {
+				if (prediction[i].probability.toFixed(2) > 0.1) {
+					barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+				} else if (prediction[i].probability.toFixed(2) >= 0.01) {
+					barWidth = "4%"
+				} else {
+					barWidth = "2%"
+				}
 				var labelTitle;
-                switch (prediction[i].className) {
-                    case "브이":
-                        labelTitle = "브이상"
-                        break;
-                    case "하트":
-                        labelTitle = "하트상"
-                        break;
-                    case "계란":
-                        labelTitle = "계란상"
-                        break;
-                    case "둥근":
-                        labelTitle = "둥근상"
-                        break;
-                    case "네모":
-                        labelTitle = "네모상"
-                        break;
-                    case "다이아":
-                        labelTitle = "다이아상"
-                        break;
-                    case "길쭉":
-                        labelTitle = "길쭉상"
-                        break;
-                    default:
-                        labelTitle = "알수없음"
-                }
-				
+				switch (prediction[i].className) {
+					case "브이":
+						labelTitle = "브이상"
+						break;
+					case "하트":
+						labelTitle = "하트상"
+						break;
+					case "계란":
+						labelTitle = "계란상"
+						break;
+					case "둥근":
+						labelTitle = "둥근상"
+						break;
+					case "네모":
+						labelTitle = "네모상"
+						break;
+					case "다이아":
+						labelTitle = "다이아상"
+						break;
+					case "길쭉":
+						labelTitle = "길쭉상"
+						break;
+					default:
+						labelTitle = "알수없음"
+				}
 				var label = "<div class='face-label d-flex align-items-center'>" + labelTitle + "</div>"
-                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
-                labelContainer.childNodes[i].innerHTML = label + bar;
-			
-			// $('.result-message').html(resultMessage);
-			// for (let i = 0; i < maxPredictions; i++) {
-			// 	const classPrediction =
-			// 		prediction[i].className + ": " + prediction[i].probability.toFixed(2); 
-			// 	labelContainer.childNodes[i].innerHTML = classPrediction; 
-				
-				
+				var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+				labelContainer.childNodes[i].innerHTML = label + bar;
+				// $('.result-message').html(resultMessage);
+				// for (let i = 0; i < maxPredictions; i++) {
+				// 	const classPrediction =
+				// 		prediction[i].className + ": " + prediction[i].probability.toFixed(2); 
+				// 	labelContainer.childNodes[i].innerHTML = classPrediction; 
 			}
 		}
 	</script>
-	
+
 </body>
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
